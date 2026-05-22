@@ -1,0 +1,18 @@
+﻿id;name;read;pattern;sequence;feature_type
+ADT_1;TotalSeq-B0062 anti-human CD10;R2;5P(BC);CAGCCATTCATTAGG;Antibody Capture
+ADT_2;TotalSeq-B0364 anti-human CD13;R2;5P(BC);TTTCAACGCCCTTTC;Antibody Capture
+ADT_3;TotalSeq-B0180 anti-human CD24;R2;5P(BC);AGATTCCTTCGTGTT;Antibody Capture
+ADT_4;TotalSeq-B0073 anti-human CD44;R2;5P(BC);TGGCTTCAGGTCCTA;Antibody Capture
+ADT_5;TotalSeq-B0952 Streptavidin (binding anti-human CD133 biotin (miltenyi 130-113-669);R2;5P(BC);GTCCGACTAATAGCT;Antibody Capture
+ADT_6;TotalSeq-B0123 anti-human CD326;R2;5P(BC);TTCCGAGCAAGTATC;Antibody Capture
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;

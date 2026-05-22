@@ -1,0 +1,10 @@
+{
+  "Human (GSE282344)": {
+    "MSigDB Hallmark pathways with MME": 0,
+    "PathDIP5 Curated pathways with MME": 17
+  },
+  "Mouse/Rat (GSE208526)": {
+    "MSigDB Hallmark pathways with Mme": 0,
+    "PathDIP5 Curated pathways with Mme": 15
+  }
+}

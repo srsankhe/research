@@ -1,0 +1,23 @@
+{
+  "dataset_id": "GSE208526",
+  "samples": {
+    "sham": {
+      "condition": "sham",
+      "cell_type": "CD45+"
+    },
+    "sham_CD45-": {
+      "condition": "sham",
+      "cell_type": "CD45-"
+    },
+    "IRI": {
+      "condition": "IRI",
+      "cell_type": "CD45+"
+    },
+    "IRI_CD45-": {
+      "condition": "IRI",
+      "cell_type": "CD45-"
+    }
+  },
+  "archive_mode": true,
+  "file_pattern": "standard"
+}

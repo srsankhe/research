@@ -1,0 +1,14 @@
+{
+  "dataset_id": "GSE208526",
+  "csv_dir": "csv_output",
+  "output_dir": "deseq2_output",
+  "samples": ["sham", "sham_CD45-", "IRI", "IRI_CD45-"],
+  "conditions": ["sham", "sham", "IRI", "IRI"],
+  "comparison": {
+    "numerator": "IRI",
+    "denominator": "sham"
+  },
+  "additional_metadata": {
+    "cell_type": ["CD45+", "CD45-", "CD45+", "CD45-"]
+  }
+}

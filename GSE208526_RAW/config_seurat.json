@@ -1,0 +1,35 @@
+{
+  "dataset_id": "GSE208526",
+  "data_format": "standard",
+  "archive_dir": "archives",
+  "samples": {
+    "sham": {
+      "condition": "Sham",
+      "cell_type": "CD45+"
+    },
+    "sham_CD45-": {
+      "condition": "Sham",
+      "cell_type": "CD45-"
+    },
+    "IRI": {
+      "condition": "IRI",
+      "cell_type": "CD45+"
+    },
+    "IRI_CD45-": {
+      "condition": "IRI",
+      "cell_type": "CD45-"
+    }
+  },
+  "output_dir": "single_cell_analysis",
+  "qc_filters": {
+    "min_features": 200,
+    "max_features": 5000,
+    "max_mt_percent": 10
+  },
+  "analysis_params": {
+    "n_variable_features": 2000,
+    "n_pca_dims": 30,
+    "clustering_resolution": 0.5
+  },
+  "genes_of_interest": ["Mme", "Ptprc", "Cd45"]
+}

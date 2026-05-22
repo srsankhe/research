@@ -1,0 +1,32 @@
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+.DS_Store
+GSE208526_RAW/.DS_Store
+GSE208526_RAW/.DS_Store
+GSE282344_RAW/single_cell_analysis/.DS_Store
+.DS_Store
+# Large data files
+*.rds
+*.RData
+
+# Large data files (>50MB)
+*.csv
+csv_output/
+deseq2_output/
+single_cell_analysis/data/
+*.mtx
+
+# Raw data archives (can be downloaded from GEO)
+archives/
+*.tar.gz
+*.gz
+
+# Plot PDFs (large visualization files)
+*.pdf
+GSE282344_RAW/single_cell_analysis/.DS_Store
+GSE282344_RAW/.DS_Store
+GSE208526_RAW/.DS_Store
+.DS_Store

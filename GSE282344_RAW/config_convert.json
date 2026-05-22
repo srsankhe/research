@@ -1,0 +1,12 @@
+{
+  "dataset_id": "GSE282344",
+  "samples": {
+    "GSM8641663_NR_JK_047": {},
+    "GSM8641664_NR_JK_048": {},
+    "GSM8641665_NR_JK_049": {},
+    "GSM8641666_NR_JK_053": {}
+  },
+  "archive_dir": "archives",
+  "file_pattern": "gsm_prefix",
+  "gene_column": "gene_name"
+}

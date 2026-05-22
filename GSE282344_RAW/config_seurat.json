@@ -1,0 +1,31 @@
+{
+  "dataset_id": "GSE282344",
+  "data_format": "gsm_prefix",
+  "archive_dir": "archives",
+  "samples": {
+    "GSM8641663_NR_JK_047": {
+      "condition": "control"
+    },
+    "GSM8641664_NR_JK_048": {
+      "condition": "control"
+    },
+    "GSM8641665_NR_JK_049": {
+      "condition": "treatment"
+    },
+    "GSM8641666_NR_JK_053": {
+      "condition": "treatment"
+    }
+  },
+  "output_dir": "single_cell_analysis",
+  "qc_filters": {
+    "min_features": 200,
+    "max_features": 5000,
+    "max_mt_percent": 10
+  },
+  "analysis_params": {
+    "n_variable_features": 2000,
+    "n_pca_dims": 30,
+    "clustering_resolution": 0.5
+  },
+  "genes_of_interest": []
+}

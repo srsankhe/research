@@ -1,0 +1,298 @@
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                                                                           ║
+║               MME/Mme PATHWAY ANALYSIS - COMPLETE SUMMARY                 ║
+║                                                                           ║
+║                        Analysis Date: 2024-11-16                          ║
+║                                                                           ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                              OBJECTIVES ACHIEVED
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ Identified ALL unique pathways containing MME (human) / Mme (mouse/rat)
+✅ Searched MSigDB Hallmark databases (Human & Mouse)
+✅ Searched PathDIP5 Curated databases (Human & Mouse)
+✅ Performed enrichment analysis with DESeq2 differential expression results
+✅ Created comprehensive visualizations (9 plots)
+✅ Generated detailed reports and data files
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                              KEY FINDINGS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📊 PATHWAYS IDENTIFIED:
+
+   MSigDB Hallmark:
+   ├─ Human MME:     0 pathways ❌
+   └─ Mouse Mme:     0 pathways ❌
+   
+   → MME/Mme is NOT present in MSigDB Hallmark gene sets
+     (Hallmark represents broadly dysregulated pathways)
+
+   PathDIP5 Curated:
+   ├─ Human MME:     17 pathways ✅
+   └─ Mouse Mme:     15 pathways ✅
+   
+   Conservation:
+   ├─ Shared:        15 pathways (88% conservation rate)
+   ├─ Human-only:    2 pathways
+   └─ Mouse-only:    0 pathways
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                         FUNCTIONAL CATEGORIES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. 🔬 IMMUNE SYSTEM (5 human, 4 mouse pathways)
+   ├─ Innate Immune System
+   ├─ Immune System (general)
+   ├─ Neutrophil degranulation
+   ├─ Hematopoietic cell lineage
+   └─ MARKERS_NEUTROPHIL (human only)
+   
+   → Primary function in immune response, especially neutrophil activity
+
+2. 🧬 PROTEIN METABOLISM (3 pathways each)
+   ├─ Metabolism of Angiotensinogen to Angiotensins
+   ├─ Peptide hormone metabolism
+   └─ Metabolism of proteins
+   
+   → Critical role in peptide degradation and hormone regulation
+
+3. 🧠 NEURODEGENERATIVE DISEASES (3 human, 2 mouse)
+   ├─ Alzheimer disease (KEGG)
+   ├─ Alzheimer's disease (WikiPathways)
+   └─ Alzheimer's disease and miRNA effects (WikiPathways, human only)
+   
+   → Neuroprotective role through amyloid-beta degradation
+
+4. ❤️  CARDIOVASCULAR/MUSCULAR (3 pathways each)
+   ├─ Cardiac conduction
+   ├─ Muscle contraction
+   └─ Physiological factors
+   
+   → Important in cardiovascular regulation
+
+5. 🩺 OTHER SYSTEMS
+   ├─ Renin-angiotensin system (Endocrine)
+   ├─ Protein digestion and absorption (Digestive)
+   └─ Primary focal segmental glomerulosclerosis (Kidney/FSGS)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                         ENRICHMENT RESULTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🧬 HUMAN (GSE282344 - Treatment vs Control)
+
+   Top 5 Enriched Pathways:
+   
+   1. MARKERS_NEUTROPHIL
+      Hit Rate: 12.5% | DE Genes: 1/8 | Gene: PECAM1
+   
+   2. Hematopoietic cell lineage
+      Hit Rate: 3.2% | DE Genes: 3/94 | Genes: FLT3, CD1D, CSF3R
+   
+   3. Neutrophil degranulation
+      Hit Rate: 1.9% | DE Genes: 9/478 | Top: FCAR, CFD, CRISPLD2...
+   
+   4. Innate Immune System
+      Hit Rate: 1.2% | DE Genes: 14/1151 | Top: FCAR, C5AR2, MUC5AC...
+   
+   5. Immune System
+      Hit Rate: 1.1% | DE Genes: 24/2114 | Top: FCAR, FLT3, CD1D...
+
+
+🐀 RAT (GSE208526 - IRI vs Sham)
+
+   Top 5 Enriched Pathways:
+   
+   1. Physiological factors
+      Hit Rate: 14.3% | DE Genes: 1/7 | Gene: NPR1
+   
+   2. Protein digestion and absorption
+      Hit Rate: 9.3% | DE Genes: 10/108 | Top: COL6A2, COL6A1, COL12A1...
+   
+   3. Peptide hormone metabolism
+      Hit Rate: 3.1% | DE Genes: 2/64 | Genes: IGF1, INHBA
+   
+   4. Muscle contraction
+      Hit Rate: 3.1% | DE Genes: 5/160 | Top: TPM2, DES, NPR1...
+   
+   5. Alzheimer disease
+      Hit Rate: 2.4% | DE Genes: 9/371 | Top: FZD9, TUBB6, TUBB3...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                         PATHWAY SOURCES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Distribution of pathways across databases:
+
+   REACTOME:        9 pathways (53%) - Most comprehensive
+   KEGG:            4 pathways (24%)
+   WikiPathways:    3 pathways (18%)
+   ACSN2:           1 pathway  (6%)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                         BIOLOGICAL SIGNIFICANCE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+MME/Mme (NEPRILYSIN/CD10) is a zinc-dependent metalloproteinase that:
+
+🔹 SUBSTRATE SPECIFICITY:
+   • Amyloid-beta peptides (Alzheimer's disease)
+   • Angiotensins (blood pressure regulation)
+   • Substance P, enkephalins (pain signaling)
+   • Atrial natriuretic peptide (cardiovascular homeostasis)
+   • Various peptide hormones
+
+🔹 IMMUNE FUNCTION:
+   • Expressed on neutrophils and immune cells
+   • Regulates inflammatory peptides
+   • Marker for certain immune cell types
+   • Involved in immune cell differentiation
+
+🔹 DISEASE ASSOCIATIONS:
+   • Alzheimer's disease (neuroprotective - degrades Aβ)
+   • Kidney disease (FSGS, glomerular damage)
+   • Cardiovascular disease (RAS system regulation)
+   • Cancer (cell surface marker - CD10)
+   • Acute kidney injury (IRI model shows changes)
+
+🔹 THERAPEUTIC POTENTIAL:
+   • Alzheimer's therapy target (increase activity)
+   • Hypertension treatment (ACE inhibitor interactions)
+   • Cancer biomarker and potential target
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                         FILES GENERATED
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📁 pathway_analysis_results/
+
+   📄 Reports & Documentation:
+   ├─ README.md                                  - Main documentation
+   ├─ PATHWAY_ANALYSIS_SUMMARY.txt               - Quick reference
+   ├─ MME_PATHWAY_ANALYSIS_REPORT.md             - Detailed markdown report
+   └─ COMPLETE_ANALYSIS_SUMMARY.txt              - This file
+
+   📊 Data Files:
+   ├─ human_MME_pathdip5_curated_pathways.csv    - All human MME pathways
+   ├─ human_MME_pathdip5_enrichment.csv          - Human enrichment analysis
+   ├─ mouse_Mme_pathdip5_curated_pathways.csv    - All mouse Mme pathways
+   ├─ rat_Mme_pathdip5_enrichment.csv            - Rat enrichment analysis
+   ├─ pathway_species_comparison.csv             - Species comparison matrix
+   └─ pathway_analysis_summary.json              - Summary statistics
+
+   📈 Visualization Plots (plots/):
+   ├─ 01_pathway_categories.png                  - Category distribution
+   ├─ 02_pathway_sources.png                     - Source distribution
+   ├─ 03_human_enrichment_top15.png              - Top human pathways
+   ├─ 04_rat_enrichment_top15.png                - Top rat pathways
+   ├─ 05_size_vs_enrichment_scatter.png          - Size vs enrichment
+   ├─ 06_enrichment_heatmap_by_source.png        - Heatmap by source
+   ├─ 07_all_pathways_dotplot.png                - Comprehensive dotplot
+   ├─ 08_species_comparison.png                  - Species comparison
+   ├─ 09_summary_statistics.png                  - Summary panel
+   └─ PLOTS_README.md                            - Plot documentation
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                         ANALYSIS SCRIPTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 ../mme_pathway_analysis.py
+   • Main pathway analysis script
+   • Searches MSigDB Hallmark and PathDIP5 databases
+   • Performs enrichment analysis with DE genes
+   • Generates CSV output files
+
+🔧 ../create_pathway_summary.py
+   • Creates comprehensive reports
+   • Compares species conservation
+   • Summarizes by category and source
+   • Generates markdown and text reports
+
+🔧 ../create_enrichment_plots.py
+   • Generates all 9 visualization plots
+   • Creates bar charts, scatter plots, heatmaps
+   • Produces species comparison plots
+   • Makes summary statistics panels
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                         HOW TO USE THE RESULTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. 📊 VIEW QUICK SUMMARY:
+   cat PATHWAY_ANALYSIS_SUMMARY.txt
+
+2. 📖 READ DETAILED REPORT:
+   cat MME_PATHWAY_ANALYSIS_REPORT.md
+   # Or open in Markdown viewer
+
+3. 📈 VIEW PLOTS:
+   cd plots/
+   open *.png              # Mac
+   xdg-open *.png          # Linux
+
+4. 📋 ANALYZE DATA:
+   # Open CSV files in Excel, R, or Python
+   # All CSV files contain enrichment and pathway information
+
+5. 🔬 EXPLORE SPECIFIC PATHWAYS:
+   # Filter CSV files by category, source, or enrichment level
+   # Cross-reference with original DESeq2 results
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                         KEY CONCLUSIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. ✅ MME/Mme is HIGHLY CONSERVED across species (88% pathway overlap)
+
+2. ✅ PRIMARY FUNCTION: Immune system and protein metabolism
+   - Strongest enrichment in neutrophil-related pathways
+   - Critical for peptide hormone degradation
+
+3. ✅ NOT a hallmark gene
+   - Absence from MSigDB Hallmark indicates context-specific function
+   - Not broadly dysregulated across many conditions
+
+4. ✅ DISEASE RELEVANCE confirmed:
+   - Alzheimer's disease (3 pathways)
+   - Kidney disease (FSGS, IRI model)
+   - Immune dysfunction (5 pathways)
+
+5. ✅ ENRICHMENT shows active pathways:
+   - Human: Strong immune/neutrophil signature
+   - Rat: Protein metabolism and muscle function
+   - Different enrichment patterns reflect different experimental contexts
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                         DATABASES USED
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+• MSigDB Hallmark v2025.1.Hs (Human)
+• MSigDB Hallmark v2025.1.Mm (Mouse)
+• PathDIP5 Curated (Human) - integrates KEGG, Reactome, WikiPathways, ACSN2
+• PathDIP5 Curated (Mouse) - integrates KEGG, Reactome, WikiPathways
+• DESeq2 results from GSE282344 (Human)
+• DESeq2 results from GSE208526 (Rat, using mouse pathways)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                         CITATIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+If you use this analysis, please cite:
+
+• MSigDB: Liberzon et al. (2011, 2015) - Molecular signatures database
+• PathDIP: Rahmati et al. (2020) - Pathway database integration
+• DESeq2: Love et al. (2014) - Differential expression analysis
+• KEGG: Kanehisa et al. - Kyoto Encyclopedia of Genes and Genomes
+• Reactome: Gillespie et al. - Pathway knowledgebase
+• WikiPathways: Slenter et al. - Community pathway database
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Analysis completed: November 16, 2024
+Tool: Python 3 with pandas, matplotlib, seaborn
+Location: /Users/ssankhe/Documents/Github/research/pathway_analysis_results/
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

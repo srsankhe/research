@@ -1,0 +1,31 @@
+{
+  "dataset_id": "GSE282344",
+  "samples": {
+    "GSM8641663_NR_JK_047": {
+      "sample_id": "NR_JK_047"
+    },
+    "GSM8641664_NR_JK_048": {
+      "sample_id": "NR_JK_048"
+    },
+    "GSM8641665_NR_JK_049": {
+      "sample_id": "NR_JK_049"
+    },
+    "GSM8641666_NR_JK_053": {
+      "sample_id": "NR_JK_053"
+    },
+    "GSM8641667_NR_JK_050": {
+      "sample_id": "NR_JK_050"
+    },
+    "GSM8641668_NR_JK_051": {
+      "sample_id": "NR_JK_051"
+    },
+    "GSM8641669_NR_JK_052": {
+      "sample_id": "NR_JK_052"
+    },
+    "GSM8641670_NR_JK_054": {
+      "sample_id": "NR_JK_054"
+    }
+  },
+  "archive_mode": true,
+  "file_pattern": "gsm_prefix"
+}

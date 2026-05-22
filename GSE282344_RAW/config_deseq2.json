@@ -1,0 +1,16 @@
+{
+  "dataset_id": "GSE282344",
+  "csv_dir": "csv_output",
+  "output_dir": "deseq2_output",
+  "samples": [
+    "GSM8641663_NR_JK_047",
+    "GSM8641664_NR_JK_048",
+    "GSM8641665_NR_JK_049",
+    "GSM8641666_NR_JK_053"
+  ],
+  "conditions": ["control", "control", "treatment", "treatment"],
+  "comparison": {
+    "numerator": "treatment",
+    "denominator": "control"
+  }
+}

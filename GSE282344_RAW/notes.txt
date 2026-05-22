@@ -1,0 +1,257 @@
+===================================================================================
+ANALYSIS NOTES: GSE282344 Single-Cell RNA-seq Study
+===================================================================================
+
+Date: 2025-11-16
+Dataset: GSE282344 (Human single-cell RNA-seq)
+Publication: PubMed ID 40303202 (Published 2025)
+
+===================================================================================
+STUDY OVERVIEW
+===================================================================================
+
+Study Title: Flow cytometric markers identify tubular epithelial cells in urine
+             as indicators of kidney tubular damage
+
+Research Goal: Identify and validate cell markers for detecting kidney tubular
+               damage in urine samples
+
+Total Study Size: 243 patients
+
+===================================================================================
+STUDY DESIGN - TWO PHASES
+===================================================================================
+
+PHASE 1: DISCOVERY (Single-cell sequencing)
+-------------------------------------------
+Sample Size: 8 urine samples
+Patients: AKI and glomerular disease
+Method: Single-cell RNA-seq + CITE-seq (Cellular Indexing of Transcriptomes
+        and Epitopes by Sequencing)
+Data Available: YES - This is what's in the GEO database (GSE282344)
+Purpose: Identify cell markers that indicate kidney tubular damage
+
+Samples Analyzed:
+  - GSM8641663_NR_JK_047 - 33,538 genes × 2,772 cells (control)
+  - GSM8641664_NR_JK_048 - 33,538 genes × 2,741 cells (control)
+  - GSM8641665_NR_JK_049 - 33,538 genes × 3,136 cells (treatment)
+  - GSM8641666_NR_JK_053 - 33,538 genes × 1,914 cells (treatment)
+
+Samples Excluded from DESeq2:
+  - GSM8641667_NR_JK_050 - Protein markers only (6 CD markers)
+  - GSM8641668_NR_JK_051 - Protein markers only (6 CD markers)
+  - GSM8641669_NR_JK_052 - Protein markers only (6 CD markers)
+  - GSM8641670_NR_JK_054 - Protein markers only (6 CD markers)
+
+
+PHASE 2: VALIDATION (Flow cytometry)
+-------------------------------------
+Sample Size: 235 patients across 4 cohorts
+  - AKI patients (n=63)
+  - COVID-19 infection (n=47)
+  - ANCA-associated vasculitis (n=110)
+  - Healthy controls (n=15)
+Method: Flow cytometry
+Data Available: NO - Not in GEO database
+Purpose: Validate markers found in discovery phase using clinical method
+
+===================================================================================
+WHY ONLY 8 SEQUENCING SAMPLES?
+===================================================================================
+
+Single-cell RNA sequencing:
+  - Expensive (~$1,000-3,000 per sample)
+  - Computationally intensive
+  - Discovery-focused - identifies what markers to look for
+
+Flow cytometry:
+  - Cheaper (~$50-200 per sample)
+  - Faster
+  - Validation-focused - confirms markers work in clinical settings
+
+Strategy: Use expensive sequencing on small sample to discover markers,
+          then validate with cheaper method on large cohort
+
+===================================================================================
+PROTEIN MARKERS TESTED (CITE-seq data)
+===================================================================================
+
+Six CD markers were tested using antibody capture:
+  1. CD10 (TotalSeq-B0062 anti-human CD10) - MME/Neprilysin
+  2. CD13 (TotalSeq-B0364 anti-human CD13)
+  3. CD24 (TotalSeq-B0180 anti-human CD24)
+  4. CD44 (TotalSeq-B0073 anti-human CD44)
+  5. CD133 (TotalSeq-B0952 Streptavidin binding anti-human CD133)
+  6. CD326 (TotalSeq-B0123 anti-human CD326)
+
+These markers were specifically chosen to identify tubular epithelial cells
+(TECs) in urine.
+
+===================================================================================
+MME (CD10) - DETAILED FINDINGS
+===================================================================================
+
+Gene Name: MME (Membrane Metalloendopeptidase)
+Also Known As:
+  - CD10 (cluster of differentiation 10)
+  - Neprilysin
+  - CALLA (Common Acute Lymphoblastic Leukemia Antigen)
+
+STATISTICAL RESULTS FROM DESeq2:
+---------------------------------
+baseMean:           1,487.4 (moderately high expression)
+log2FoldChange:     1.04 (treatment vs control)
+                    → ~2.06-fold upregulation in treatment (2^1.04)
+Standard Error:     0.93
+Test Statistic:     1.12
+p-value:            0.26
+Adjusted p-value:   0.93
+
+SIGNIFICANCE: NOT STATISTICALLY SIGNIFICANT
+  - Did NOT make it into significant genes list
+  - Adjusted p-value (0.93) >> significance threshold (0.05)
+  - Shows trend toward upregulation but not statistically reliable
+
+INTERPRETATION:
+---------------------------------
+The slight upward trend (1.04 log2FC) without statistical significance suggests:
+  - MME expression is variable across samples
+  - Effect size is small and inconsistent
+  - NOT a key differentially expressed gene in treatment vs control
+  - However, CD10 protein levels (measured by CITE-seq) may show different
+    patterns than mRNA levels
+
+BIOLOGICAL FUNCTION:
+---------------------------------
+  - Cell surface enzyme that cleaves peptides
+  - Regulates peptide signaling
+  - Important in immune cell development and function
+  - Marker for various cell types:
+    * Germinal center B cells
+    * Certain leukemias/lymphomas
+    * Stem/progenitor cells
+    * Tubular epithelial cells (in kidney context)
+
+CLINICAL RELEVANCE:
+---------------------------------
+In the context of this kidney damage study, CD10/MME was likely chosen because:
+  - Expressed on tubular epithelial cells
+  - Can help identify damaged kidney cells shed into urine
+  - Useful flow cytometry marker for clinical validation
+
+===================================================================================
+DESEQ2 ANALYSIS SUMMARY
+===================================================================================
+
+Genes Analyzed: 26,703 total
+Significant Genes: 79 (padj < 0.05, |log2FC| > 1)
+  - Upregulated in treatment: 69 genes
+  - Downregulated in treatment: 10 genes
+
+TOP UPREGULATED GENES:
+  1. CYP2A7    (log2FC = 23.1)  - Cytochrome P450 enzyme
+  2. TPSB2     (log2FC = 6.7)   - Tryptase beta 2
+  3. MUC5AC    (log2FC = 5.2)   - Mucin (airway secretion)
+  4. AC020656.1(log2FC = 4.6)   - Long non-coding RNA
+  5. FLT3      (log2FC = 4.2)   - FMS-like tyrosine kinase
+
+TOP DOWNREGULATED GENES:
+  1. IL22      (log2FC = -23.8) - Interleukin 22
+  2. CXCL9     (log2FC = -10.3) - Chemokine (immune response)
+  3. CXCL10    (log2FC = -9.2)  - Chemokine (inflammation)
+  4. CXCL11    (log2FC = -6.2)  - Chemokine
+  5. IDO1      (log2FC = -5.8)  - Indoleamine 2,3-dioxygenase
+
+===================================================================================
+IMPORTANT CAVEATS
+===================================================================================
+
+⚠️ SAMPLE CONDITION ASSIGNMENTS ASSUMED:
+  - Samples 047, 048 = control
+  - Samples 049, 053 = treatment
+
+  These assignments were inferred and should be verified against:
+  https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE282344
+
+⚠️ PSEUDO-BULK ANALYSIS:
+  - Single-cell data was aggregated to pseudo-bulk for DESeq2
+  - This loses cell-type-specific information
+  - Consider single-cell-specific analysis methods for detailed insights
+
+⚠️ PROTEIN VS mRNA:
+  - RNA expression (what DESeq2 measures) doesn't always correlate with
+    protein levels (what CITE-seq/flow cytometry measures)
+  - CD markers may show different patterns at protein level
+
+===================================================================================
+DATA FILES GENERATED
+===================================================================================
+
+Location: deseq2_output/
+
+CSV Files:
+  - treatment_vs_control_results.csv          (All genes with statistics)
+  - treatment_vs_control_significant_genes.csv (79 significant genes)
+  - pseudobulk_counts.csv                      (Count matrix)
+  - sample_metadata.csv                        (Sample assignments - VERIFY!)
+  - analysis_summary.txt                       (Human-readable summary)
+
+Plots:
+  - volcano_plot.png           (All genes, red = significant)
+  - MA_plot.png                (Expression vs fold change)
+  - PCA_plot.png               (Sample clustering)
+  - heatmap_top50_genes.png    (Top 50 most changed genes)
+  - dispersion_plot.png        (DESeq2 diagnostic)
+
+===================================================================================
+NEXT STEPS / RECOMMENDATIONS
+===================================================================================
+
+1. VERIFY SAMPLE ASSIGNMENTS
+   - Check GEO database for actual condition labels
+   - Modify deseq2_analysis.R if needed
+   - Re-run analysis with correct assignments
+
+2. CELL-TYPE-SPECIFIC ANALYSIS
+   - Consider Seurat or Scanpy for single-cell analysis
+   - Identify cell types (TECs, immune cells, etc.)
+   - Perform differential expression within cell types
+
+3. PROTEIN-LEVEL ANALYSIS
+   - Analyze CITE-seq protein data from samples 050-054
+   - Compare mRNA vs protein levels for CD markers
+   - May reveal different patterns than transcriptomics
+
+4. PATHWAY ANALYSIS
+   - Submit significant genes to:
+     * DAVID: https://david.ncifcrf.gov/
+     * Enrichr: https://maayanlab.cloud/Enrichr/
+     * Reactome: https://reactome.org/
+
+5. LITERATURE VALIDATION
+   - Review publication (PubMed 40303202)
+   - Check which markers were validated in 235-patient cohort
+   - Compare your findings to published results
+
+===================================================================================
+REFERENCES
+===================================================================================
+
+Dataset:
+  - GEO Accession: GSE282344
+  - URL: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE282344
+  - Public Release: Feb 18, 2025
+
+Publication:
+  - PubMed ID: 40303202
+  - URL: https://pubmed.ncbi.nlm.nih.gov/40303202
+  - Published: 2025
+
+Software:
+  - DESeq2: Love, M.I., Huber, W., Anders, S. (2014). Genome Biology, 15:550.
+  - Python: pandas, scipy, numpy
+  - R: R Core Team (2024)
+
+===================================================================================
+END OF NOTES
+===================================================================================
